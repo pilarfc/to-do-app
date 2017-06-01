@@ -35,23 +35,32 @@ window.addEventListener("load", function () {
 });
 
 
+// Función para que no publique texto vacío
+
 var boton = document.getElementById("boton-agregar"); 
 var mensajeVacio = document.getElementById("message");
 
     
    boton.setAttribute("disabled", "disabled"); 
-   mensajeVacio.addEventListener ("keypress",validar);
+   mensajeVacio.addEventListener ("keyup",validar);
     
 function validar () {
        
-       if (mensajeVacio.value != "") {
+       if (mensajeVacio.value != "") { // mensajeVacio puede ser sustituido por this
         boton.removeAttribute("disabled"); 
     } else {
         boton.setAttribute("disabled", "disabled")
     }
-       
+        
  }
 
+// Contador de caracteres 
+
+function contadorDeLetras () {
+  numeroDeCaracteres = textoArea.value.length;
+  var cantidadCaracteres = document.getElementById("cajaDeTexto");
+  cantidadCaracteres.innerHTML = numeroDeCaracteres;
+ }
 
 
 /*
@@ -74,3 +83,4 @@ $(document).ready(function(){
 
 
 
+// 
