@@ -46,7 +46,7 @@ var mensajeVacio = document.getElementById("message");
     
 function validar () {
        
-       if (mensajeVacio.value.trim() != "") { // mensajeVacio puede ser sustituido por this, trim no cuenta los espacios
+       if (mensajeVacio.value.trim() != "") { // mensajeVacio puede ser sustituido por this, trim no cuenta los espacios en blanco. 
         boton.removeAttribute("disabled"); 
     } else {
         boton.setAttribute("disabled", "disabled")
@@ -54,14 +54,19 @@ function validar () {
         
  }
 
-// Contador de caracteres 
+// Para contar caracteres en textarea
 
-function contadorDeLetras () {
-  numeroDeCaracteres = textoArea.value.length;
-  var cantidadCaracteres = document.getElementById("cajaDeTexto");
-  cantidadCaracteres.innerHTML = numeroDeCaracteres;
- }
-
+function contadoraDeCaracteres(){
+    
+    var contadorCaracteres = 0;
+    var message = document.getElementById("message");
+    
+    
+    contadorCaracteres = message.value.length;
+    var cantidadCaracteres = document.getElementById("cantidadCaracteres");
+    cantidadCaracteres.innerText = contadorCaracteres;
+    
+}
 
 /*
 $(document).ready(function(){
@@ -81,6 +86,6 @@ $(document).ready(function(){
  });
 */
 
-
+message.addEventListener("keyup",contadoraDeCaracteres);
 
 // 
