@@ -42,11 +42,11 @@ var mensajeVacio = document.getElementById("message");
 
     
    boton.setAttribute("disabled", "disabled"); 
-   mensajeVacio.addEventListener ("keyup",validar);
+   mensajeVacio.addEventListener ("keyup",validar); // se utiliza keyup ya que queremos que cuente los caracteres desde el momento en el que el usuario está escribiendo, keypress no funciona bien. 
     
 function validar () {
        
-       if (mensajeVacio.value != "") { // mensajeVacio puede ser sustituido por this
+       if (mensajeVacio.value.trim() != "") { // mensajeVacio puede ser sustituido por this, trim no cuenta los espacios
         boton.removeAttribute("disabled"); 
     } else {
         boton.setAttribute("disabled", "disabled")
