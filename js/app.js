@@ -29,6 +29,7 @@ window.addEventListener("load", function () {
 
 		// Borrar contenido de textarea
 		mensajeContenedor.value = "";
+        validar();
 	});
     
 });
@@ -37,23 +38,19 @@ window.addEventListener("load", function () {
 var boton = document.getElementById("boton-agregar"); 
 var mensajeVacio = document.getElementById("message");
 
-
     
    boton.setAttribute("disabled", "disabled"); 
    mensajeVacio.addEventListener ("keypress",validar);
     
 function validar () {
        
-       if (this.value != "") {
+       if (mensajeVacio.value != "") {
         boton.removeAttribute("disabled"); 
     } else {
         boton.setAttribute("disabled", "disabled")
     }
        
  }
-
-
-
 
 
 
